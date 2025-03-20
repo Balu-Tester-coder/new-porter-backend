@@ -1,0 +1,178 @@
+[
+	{
+		"from fastapi import FastAPI": "from pydantic import BaseModel"
+	},
+	{
+		"from fastapi import FastAPI": "from typing import List",
+		" HTTPException": " Optional"
+	},
+	{
+		"from fastapi import FastAPI": ""
+	},
+	{
+		"from fastapi import FastAPI": "app = FastAPI()"
+	},
+	{
+		"from fastapi import FastAPI": ""
+	},
+	{
+		"from fastapi import FastAPI": "# Pydantic model for User"
+	},
+	{
+		"from fastapi import FastAPI": "class User(BaseModel):"
+	},
+	{
+		"from fastapi import FastAPI": "    id: int"
+	},
+	{
+		"from fastapi import FastAPI": "    name: str"
+	},
+	{
+		"from fastapi import FastAPI": "    email: str"
+	},
+	{
+		"from fastapi import FastAPI": ""
+	},
+	{
+		"from fastapi import FastAPI": "# In-memory user storage"
+	},
+	{
+		"from fastapi import FastAPI": "users = ["
+	},
+	{
+		"from fastapi import FastAPI": "    User(id=1",
+		" HTTPException": " name='John Doe'"
+	},
+	{
+		"from fastapi import FastAPI": "    User(id=2",
+		" HTTPException": " name='Jane Doe'"
+	},
+	{
+		"from fastapi import FastAPI": "]"
+	},
+	{
+		"from fastapi import FastAPI": ""
+	},
+	{
+		"from fastapi import FastAPI": "# Get User"
+	},
+	{
+		"from fastapi import FastAPI": "@app.get('/users/{user_id}'",
+		" HTTPException": " response_model=User)"
+	},
+	{
+		"from fastapi import FastAPI": "def get_user(user_id: int):"
+	},
+	{
+		"from fastapi import FastAPI": "    for user in users:"
+	},
+	{
+		"from fastapi import FastAPI": "        if user.id == user_id:"
+	},
+	{
+		"from fastapi import FastAPI": "            return user"
+	},
+	{
+		"from fastapi import FastAPI": "    raise HTTPException(status_code=404",
+		" HTTPException": " detail='User not found.')"
+	},
+	{
+		"from fastapi import FastAPI": ""
+	},
+	{
+		"from fastapi import FastAPI": "# Create User"
+	},
+	{
+		"from fastapi import FastAPI": "@app.post('/users'",
+		" HTTPException": " response_model=User"
+	},
+	{
+		"from fastapi import FastAPI": "def create_user(user: User):"
+	},
+	{
+		"from fastapi import FastAPI": "    users.append(user)"
+	},
+	{
+		"from fastapi import FastAPI": "    return user"
+	},
+	{
+		"from fastapi import FastAPI": ""
+	},
+	{
+		"from fastapi import FastAPI": "# Update User"
+	},
+	{
+		"from fastapi import FastAPI": "@app.put('/users/{user_id}'",
+		" HTTPException": " response_model=User)"
+	},
+	{
+		"from fastapi import FastAPI": "def update_user(user_id: int",
+		" HTTPException": " updated_user: User):"
+	},
+	{
+		"from fastapi import FastAPI": "    for index",
+		" HTTPException": " user in enumerate(users):"
+	},
+	{
+		"from fastapi import FastAPI": "        if user.id == user_id:"
+	},
+	{
+		"from fastapi import FastAPI": "            users[index] = updated_user"
+	},
+	{
+		"from fastapi import FastAPI": "            return updated_user"
+	},
+	{
+		"from fastapi import FastAPI": "    raise HTTPException(status_code=404",
+		" HTTPException": " detail='User not found.')"
+	},
+	{
+		"from fastapi import FastAPI": ""
+	},
+	{
+		"from fastapi import FastAPI": "# Delete User"
+	},
+	{
+		"from fastapi import FastAPI": "@app.delete('/users/{user_id}'",
+		" HTTPException": " status_code=204)"
+	},
+	{
+		"from fastapi import FastAPI": "def delete_user(user_id: int):"
+	},
+	{
+		"from fastapi import FastAPI": "    for index",
+		" HTTPException": " user in enumerate(users):"
+	},
+	{
+		"from fastapi import FastAPI": "        if user.id == user_id:"
+	},
+	{
+		"from fastapi import FastAPI": "            users.pop(index)"
+	},
+	{
+		"from fastapi import FastAPI": "            return"
+	},
+	{
+		"from fastapi import FastAPI": "    raise HTTPException(status_code=404",
+		" HTTPException": " detail='User not found.')"
+	},
+	{
+		"from fastapi import FastAPI": ""
+	},
+	{
+		"from fastapi import FastAPI": "# Start the server"
+	},
+	{
+		"from fastapi import FastAPI": "if __name__ == '__main__':"
+	},
+	{
+		"from fastapi import FastAPI": "    import uvicorn"
+	},
+	{
+		"from fastapi import FastAPI": "    uvicorn.run(app",
+		" HTTPException": " host='0.0.0.0'"
+	},
+	{
+		"from fastapi import FastAPI": ""
+	}
+]
