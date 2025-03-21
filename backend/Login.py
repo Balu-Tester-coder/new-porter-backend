@@ -28,7 +28,7 @@ client_secret = "1eomsgiNL0S0UwH2Eqbvw5TK1SJ15r9oLxn0o4fkZ0A"
 username_name = quote_plus(str("bala"))
 password_password = quote_plus(str("bala123"))
 
-DATABASE_URL = f"mongodb+srv://{username_name}:{password_password}@cluster0.0z8bodb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+DATABASE_URL = f"mongodb+srv://bala:bala123@cluster0.0z8bodb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 # Initialize client
 client = MongoClient(DATABASE_URL)
